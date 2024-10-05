@@ -176,7 +176,7 @@ function sortedHightoLowPrice(stock1, stock2){
 app.get('/stocks/sort/pricing', (req, res) => {
   let sortedStocks = stocks.slice();
   sortedStocks.sort(sortedHightoLowPrice);
-  res.json(sortedStocks);
+  res.json({ stocks : sortedStocks });
 });
 
 function sortedLowtoHighGrowth(stock1, stock2){
@@ -185,7 +185,7 @@ function sortedLowtoHighGrowth(stock1, stock2){
 app.get('/stocks/sort/growth', (req,res) => {
   let sortedStocks = stocks.slice();
   sortedStocks.sort(sortedLowtoHighGrowth);
-  res.json(sortedStocks);
+  res.json({ stocks : sortedStocks });
 });
 
 function filterByExchange(stock, exchange){
@@ -194,7 +194,7 @@ function filterByExchange(stock, exchange){
 app.get('/stocks/filter/exchange', (req,res) => {
   let exchange = 'nse';
   let result = stocks.filter((stock) =>  filterByExchange(stock, exchange));
-  res.json(result);
+  res.json({ stocks : result });
 });
 
 function filterByIndustry(stock, industry){
@@ -203,11 +203,11 @@ function filterByIndustry(stock, industry){
 app.get('/stocks/filter/industry', (req,res) => {
   let industry = 'pharma';
   let result = stocks.filter(stock => filterByIndustry(stock, industry));
-  res.json(result);
+  res.json({ stocks : result });
 });
 
 app.get('/stocks' , (req,res) => {
-  res.json(stocks);
+  res.json({ stocks : stocks });
 });
 
 app.listen(port, () => {
