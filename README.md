@@ -1,7 +1,13 @@
-# Simple express demo
+Advani company has created their own platform for displaying various stocks from NSE and BSE exchange and also from various sectors.
 
-> Express: fast, unopinionated, minimalist web framework for Node.js
+Copy/Paste the given array of stocks from the below link
 
-This project shows a simple express server serving a single HTML page and using `express.static` to serve static files.
+https://gist.github.com/imrhlrvndrn/3d06ab8a7e06e45b610248c71d783638
 
-Check out the [express documentation](https://expressjs.com/) for more information.
+They need someone to help them display the stocks sorted in the following parameters:
+
+Price
+
+Growth
+
+So, we need to use our Sorting and Filtering methods to display the stocks as per user actions.
